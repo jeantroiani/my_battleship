@@ -1,6 +1,6 @@
 require 'ship'		
 
-describe 'the ship' do
+describe Ship do
 
 let (:ship) {Ship.new}	
 
@@ -16,6 +16,11 @@ let (:ship) {Ship.new}
 	it 'can get hit' do
 			expect(ship.gets_hit)
 			expect(ship.hit_counter).to eq 1
+	end
+
+	it 'gets hit and returns a new cell object' do
+			expect(ship.gets_hit).to be_instance_of Hit
+
 	end
 
 	it	'knows if is sunk' do

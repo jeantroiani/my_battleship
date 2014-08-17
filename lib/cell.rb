@@ -1,14 +1,15 @@
-class Cell
+require './lib/water'
 
-attr_accessor :contains 
+	class Cell
 
-	def initialize(contains = :water)
-		@contains = contains
+	attr_accessor :contains 
+
+			def initialize(contains=Water.new)
+				@contains = contains
+			end
+
+			def gets_hit
+				contains.gets_hit
+			end
+
 	end
-
-	
-
-
-
-
-end

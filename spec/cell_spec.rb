@@ -1,25 +1,20 @@
 require 'cell'
 
-	describe 'cell' do
+	describe Cell do
 
 		let(:cell) {Cell.new}
 
+		
 		it 'has an initial water state' do
-			expect(cell.contains).to eq :water
+			expect(cell.contains).to be_instance_of Water
 		end
 
-		it 'can accept a ship' do
-			board	= double :board
-			ship	= double :ship
-			expect(cell.contains)			# allow(board).to receive(:place_this).with(ship,cell,:h)
-			expect(cell.contains).to eq :ship
+		it 'can take a hit' do
+				expect(cell.contains).to receive(:gets_hit)
+				cell.gets_hit
 		end
 
 
-
-
-
-
-
+	
 
 	end
